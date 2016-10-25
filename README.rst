@@ -1,5 +1,5 @@
 Django Careers
-============
+==============
 
 A simple app to render a careers-page on your website.
 
@@ -18,8 +18,6 @@ To get the latest commit from GitHub
 
     pip install -e git+git://github.com/theartling/django-careers.git#egg=careers
 
-TODO: Describe further installation steps (edit / remove the examples below):
-
 Add ``careers`` to your ``INSTALLED_APPS``
 
 .. code-block:: python
@@ -37,13 +35,6 @@ Add the ``careers`` URLs to your ``urls.py``
         url(r'^careers/', include('careers.urls')),
     ]
 
-Before your tags/filters are available in your templates, load them by using
-
-.. code-block:: html
-
-	{% load careers_tags %}
-
-
 Don't forget to migrate your database
 
 .. code-block:: bash
@@ -54,9 +45,7 @@ Don't forget to migrate your database
 Usage
 -----
 
-TODO: Describe usage or point to docs. Also describe available settings and
-templatetags.
-
+Simply visit the django admin and start creating career objects.
 
 Contribute
 ----------

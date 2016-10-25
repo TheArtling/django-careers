@@ -9,11 +9,12 @@ Unfortunately there seems to be an issue with either South or syncdb so that
 defining two routers ("default" and "south") does not work.
 
 """
+# flake8: noqa
 from distutils.version import StrictVersion
 
 import django
 
-from .test_settings import *  # NOQA
+from .test_settings import *
 
 
 DATABASES = {
