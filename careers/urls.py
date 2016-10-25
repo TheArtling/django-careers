@@ -1,11 +1,8 @@
 """URLs for the careers app."""
-# from django.conf.urls import include, url
+from django.conf.urls import url
 
-# from . import views
+from . import views
 
-
-# urlpatterns = [
-#     url(r'^$',
-#         views.YourView.as_view(),
-#         name='careers_default'),
-# ]
+urlpatterns = [
+    url(r'^$', views.CareersView.as_view(), name='careers'),
+]

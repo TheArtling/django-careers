@@ -1,0 +1,24 @@
+{% extends "careers/base.html" %}
+{% load django_markdown %}
+
+{% block main %}
+<div class="row">
+    <div class="col-sm-12 text-md2">
+        <h1 class="first">Current Job Openings</h1>
+        <ul>
+        {% for career in careers %}
+            <li><a href="#{{ career.slug }}">{{ career.title }}</a></li>
+        {% endfor %}
+        </ul>
+        <hr />
+        {% for career in careers %}
+            <div class="col-xs-12" style="position:relative;">
+                <div id="{{ career.slug }}" style="visibility:hidden;top:-50px;position:absolute;"></div>
+                <h2 class="text-larger">{{ career.title }}</h2>
+                {{ career.job_description|markdown }}
+                <hr />
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

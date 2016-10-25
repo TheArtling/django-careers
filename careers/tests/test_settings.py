@@ -1,5 +1,6 @@
 """Settings that need to be set in order to run the tests."""
 import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 DEBUG = True
@@ -28,7 +29,10 @@ STATICFILES_DIRS = (
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     'APP_DIRS': True,
-    'DIRS': [os.path.join(APP_ROOT, 'tests/test_app/templates')],
+    'DIRS': [
+        os.path.join(APP_ROOT, 'tests/test_app/templates'),
+        os.path.join(BASE_DIR, 'templates'),
+    ],
     'OPTIONS': {
         'context_processors': (
             'django.contrib.auth.context_processors.auth',
@@ -47,6 +51,7 @@ EXTERNAL_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'django_markdown',
 ]
 
 INTERNAL_APPS = [
