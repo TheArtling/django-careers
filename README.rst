@@ -47,6 +47,21 @@ Usage
 
 Simply visit the django admin and start creating career objects.
 
+Local Test
+----------
+
+If you want to give app a quick try on your local machine, you can do the
+following:
+
+.. code-block:: bash
+
+    mkvirtualenv -p python2.7 django-careers
+    make develop
+    ./manage.py migrate
+    ./manage.py createsuperuser
+    ./manage.py runserver
+
+
 Contribute
 ----------
 
