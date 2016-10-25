@@ -1,5 +1,5 @@
 """URLs for the careers app."""
-# from compat import url
+# from django.conf.urls import include, url
 
 # from . import views
 
