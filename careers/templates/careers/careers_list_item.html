@@ -1,0 +1,8 @@
+{% load django_markdown %}
+
+<div class="col-xs-12" style="position:relative;">
+    <div id="{{ career.slug }}" style="visibility:hidden;top:-50px;position:absolute;"></div>
+    <h2 class="text-larger">{{ career.title }}</h2>
+    {{ career.job_description|markdown }}
+    <hr />
+</div>
