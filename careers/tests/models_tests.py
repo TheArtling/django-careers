@@ -1,5 +1,6 @@
 """Tests for the models of the careers app."""
 from django.test import TestCase
+from django.utils.text import slugify
 
 from mixer.backend.django import mixer
 
@@ -19,3 +20,12 @@ class CareerPositionTestCase(TestCase):
                                position=1, )
         self.assertEqual(str(instance), testTitle,
                          msg=('Should return title'))
+
+    def test_slug(self):
+        testTitle = 'test title'
+        instance = mixer.blend('careers.CareerPosition', title=testTitle,
+                               position=1, )
+        slug_value = slugify(
+            '{} {}'.format(instance.pk, testTitle), allow_unicode=True)
+        self.assertEqual(instance.slug(), slug_value,
+                         msg=('slug_value should match instance.slug()'))
