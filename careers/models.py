@@ -3,6 +3,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django_markdown.models import MarkdownField
+from django.utils.text import slugify
 
 
 class CareerPosition(models.Model):
@@ -35,3 +36,8 @@ class CareerPosition(models.Model):
 
     def __str__(self):
         return self.title
+
+    def slug(self):
+        """" Returns computed slug """
+        return slugify(
+            '{} {}'.format(self.pk, self.title), allow_unicode=True)
