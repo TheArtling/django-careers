@@ -3,6 +3,7 @@
 *.pyc
 *coverage/
 .tox/
+build/
 app_media/
 app_static/
 db.sqlite

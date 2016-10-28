@@ -10,6 +10,7 @@ include test_requirements.txt
 graft careers
 global-exclude *.orig *.pyc *.log *.swp local_settings.py .coverage db.sqlite
 prune .tox
+prune build
 prune careers/.ropeproject
 prune coverage
 prune hooks
