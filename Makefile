@@ -11,3 +11,11 @@ lint-python:
 	@echo "Linting Python files"
 	PYFLAKES_NODOCTEST=1 flake8 careers
 	@echo ""
+
+pandoc:
+	pandoc --from=markdown --to=rst --output=README.rst README.md
+
+release:
+	rm -rf dist/*
+	python setup.py sdist bdist_wheel
+	twine upload dist/*
