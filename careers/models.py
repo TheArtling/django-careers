@@ -39,5 +39,4 @@ class CareerPosition(models.Model):
 
     def slug(self):
         """" Returns computed slug """
-        return slugify(
-            '{} {}'.format(self.pk, self.title), allow_unicode=True)
+        return slugify(u'{} {}'.format(self.pk, self.title))

@@ -25,7 +25,7 @@ class CareerPositionTestCase(TestCase):
         instance = mixer.blend(
             'careers.CareerPosition', title=testTitle, position=1)
         slug_value = slugify(
-            '{} {}'.format(instance.pk, testTitle), allow_unicode=True)
+            u'{} {}'.format(instance.pk, testTitle))
         self.assertEqual(
             instance.slug(), slug_value, msg=(
                 'slug_value should match instance.slug()'))
