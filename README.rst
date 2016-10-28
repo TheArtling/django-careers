@@ -39,7 +39,7 @@ Add the ``careers`` URLs to your ``urls.py``
     ]
 
 This app has
-`django-markdown-app <https://github.com/sv0/django-markdown-app>`__ as
+`django-markdown-app <https://github.com/sv0/django-markdown-app>`_ as
 a dependency, so please have a look at their repo and follow their
 installation instructions.
 
