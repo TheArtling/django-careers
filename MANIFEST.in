@@ -8,6 +8,8 @@ include runtests.py
 include requirements.txt
 include test_requirements.txt
 graft careers
-global-exclude *.orig *.pyc *.log *.swp local_settings.py
-prune careers/tests/coverage
+global-exclude *.orig *.pyc *.log *.swp local_settings.py .coverage db.sqlite
+prune .tox
 prune careers/.ropeproject
+prune coverage
+prune hooks

@@ -3,6 +3,9 @@ Django Careers
 
 A simple app to render a careers-page on your website.
 
+You can use the Django admin to create job offers via Markdown. You can see
+the result in action at https://theartling.com/careers/
+
 Installation
 ------------
 
@@ -35,6 +38,10 @@ Add the ``careers`` URLs to your ``urls.py``
         url(r'^careers/', include('careers.urls')),
     ]
 
+This app has [django-markdown-app](https://github.com/sv0/django-markdown-app)
+as a dependency, so please have a look at their repo and follow their
+installation instructions.
+
 Don't forget to migrate your database
 
 .. code-block:: bash
@@ -45,7 +52,7 @@ Don't forget to migrate your database
 Usage
 -----
 
-Simply visit the django admin and start creating career objects.
+Simply visit the django admin and start creating `CareerPosition` objects.
 
 Local Test
 ----------
@@ -56,10 +63,13 @@ following:
 .. code-block:: bash
 
     mkvirtualenv -p python2.7 django-careers
-    make develop
+    pip install -r requirements.txt
+    pip install -r test_requirements.txt
     ./manage.py migrate
     ./manage.py createsuperuser
     ./manage.py runserver
+    # browse to the admin and create some objects
+    # browse to /careers/
 
 
 Contribute
@@ -83,3 +93,5 @@ If you want to contribute to this project, please perform the following steps
 In order to run the tests, simply execute ``tox``. This will install two new
 environments (for Django 1.8 and Django 1.9) and run the tests against both
 environments.
+
+If tox throws errors, you can also run the tests via ``./runtests.py``
