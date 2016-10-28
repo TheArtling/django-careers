@@ -10,22 +10,22 @@ class CareerPositionTestCase(TestCase):
     longMessage = True
 
     def test_model(self):
-        instance = mixer.blend('careers.CareerPosition', title='Career 1',
-                               position=1, )
-        self.assertTrue(instance.pk, msg=('Should be able to save the obj'))
+        instance = mixer.blend(
+            'careers.CareerPosition', title='Career 1', position=1)
+        self.assertTrue(instance.pk, msg='Should be able to save the obj')
 
     def test_str(self):
         testTitle = 'Test Career'
-        instance = mixer.blend('careers.CareerPosition', title=testTitle,
-                               position=1, )
-        self.assertEqual(str(instance), testTitle,
-                         msg=('Should return title'))
+        instance = mixer.blend(
+            'careers.CareerPosition', title=testTitle, position=1)
+        self.assertEqual(str(instance), testTitle, msg='Should return title')
 
     def test_slug(self):
         testTitle = 'test title'
-        instance = mixer.blend('careers.CareerPosition', title=testTitle,
-                               position=1, )
+        instance = mixer.blend(
+            'careers.CareerPosition', title=testTitle, position=1)
         slug_value = slugify(
             '{} {}'.format(instance.pk, testTitle), allow_unicode=True)
-        self.assertEqual(instance.slug(), slug_value,
-                         msg=('slug_value should match instance.slug()'))
+        self.assertEqual(
+            instance.slug(), slug_value, msg=(
+                'slug_value should match instance.slug()'))

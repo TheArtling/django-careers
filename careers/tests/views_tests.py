@@ -16,5 +16,4 @@ class CareersViewTestCase(TestCase):
     def test_view(self):
         req = RequestFactory().get('/')
         resp = views.CareersView.as_view()(req)
-        self.assertEqual(resp.status_code, 200, msg=(
-            'View should be callable'))
+        self.assertEqual(resp.status_code, 200, msg='View should be callable')
